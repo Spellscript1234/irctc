@@ -24,6 +24,10 @@
 
       <button type="submit" class="login-btn">Login</button>
       <p id="loginMessage" class="login-message"></p>
+      <p class="auth-switch">
+        Don't have an account?
+        <a href="signup.html">Sign up</a>
+      </p>
     </form>
   </main>
 
@@ -33,7 +37,25 @@
 
     loginForm.addEventListener('submit', function (event) {
       event.preventDefault();
-      loginMessage.textContent = 'Login submitted successfully!';
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value;
+      const storedUser = JSON.parse(localStorage.getItem('irctcUser'));
+
+      if (!storedUser) {
+        loginMessage.textContent = 'No account found. Please sign up first.';
+        loginMessage.className = 'login-message error';
+        return;
+      }
+
+      if (storedUser.email === email && storedUser.password === password) {
+        loginMessage.textContent = 'Login successful. Redirecting...';
+        loginMessage.className = 'login-message success';
+        window.location.href = 'index.html';
+        return;
+      }
+
+      loginMessage.textContent = 'Invalid email or password.';
+      loginMessage.className = 'login-message error';
     });
   </script>
 </body>

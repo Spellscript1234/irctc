@@ -369,3 +369,27 @@ body {
   color: #1a3c6e;
   font-weight: bold;
 }
+
+.login-message.success {
+  color: #1b5e20;
+}
+
+.login-message.error {
+  color: #b71c1c;
+}
+.auth-switch {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #1a3c6e;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: #1565c0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
