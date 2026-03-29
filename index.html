@@ -8,8 +8,8 @@
 </head>
 <body>
   <div class="navbar">
-    <a href="#">Home</a>
-    <a href="#">Login</a>
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
   </div>
   <div class="search-box">
     <p>From: <input type="text" placeholder="Enter from city name" id="from"></p>
@@ -17,6 +17,17 @@
     <p>Departure date: <input type="date" id="date"></p>
     <p><button id="sub">SUBMIT -></button></p>
   </div>
+  <div class="sort-bar">
+  <span>Sort by:</span>
+  <button onclick="sortBy('price', 'asc')">Price ↑</button>
+  <button onclick="sortBy('price', 'desc')">Price ↓</button>
+  <button onclick="sortBy('duration', 'asc')">Duration ↑</button>
+  <button onclick="sortBy('duration', 'desc')">Duration ↓</button>
+</div>
+
+<div class="results">
+  <h4 id="searching"></h4>
+</div>
   <div class="results">
     <h4 id="searching"></h4>
   </div>
