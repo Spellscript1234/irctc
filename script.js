@@ -1,7 +1,10 @@
 const from=document.getElementById('from');
 const too=document.getElementById('to');
-const sub1=document.getElementById('sub-1');
-const sub2=document.getElementById('sub-2')
+let date=document.getElementById('date')
+const sub=document.getElementById('sub')
+let info={};
+const searching=document.getElementById('searching');
+let flag=0;
 
 async function getstations(){
   const data= await fetch ('stations.json');
@@ -19,17 +22,24 @@ async function getindex(city){
   return index;
 }
 
-async function getfro(){
+async function searchtrains(){
+  const alltrains=await gettrains();
+  console.log(alltrains);
+}
+
+async function checkall(){
   const fro=from.value;
-  const index=await getindex(fro);
-  console.log(index);
-}
-
-async function getto(){
+  const index1=await getindex(fro);
   const to=too.value;
-  const index=await getindex(to);
-  console.log(index)
+  const index2=await getindex(to);
+  let val=date.value;
+  val=new Date(val)
+  const day=val.getDay();
+  info={index1,index2,day};
+  if(index1!=-1 && index2!=-1 && index2>index1){
+    searching.innerText=(`Trains from ${fro} to ${to} on ${val}`);
+    searchtrains;
+  }
 }
 
-sub1.addEventListener('click',getfro);
-sub2.addEventListener('click', getto);
+sub.addEventListener('click',checkall);
