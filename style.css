@@ -393,3 +393,72 @@ body {
 .auth-switch a:hover {
   text-decoration: underline;
 }
+
+.booking-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 560px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 28px;
+}
+
+.booking-card h1 {
+  color: #1a3c6e;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.booking-details {
+  background-color: #f2f6ff;
+  border: 1px solid #d6e3ff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.booking-details p {
+  margin-bottom: 8px;
+  color: #1a3c6e;
+}
+
+.booking-details p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-form label {
+  color: #1a3c6e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}

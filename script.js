@@ -44,6 +44,29 @@ function sortBy(type, order) {
   displayTrains(sorted);
 }
 
+function openBookingPage(train) {
+  const fromInput = document.getElementById('from').value.trim();
+  const toInput = document.getElementById('to').value.trim();
+  const journeyDate = document.getElementById('date').value;
+  const fromStop = train.schedule.find(s => s.station_code === currentFromCode);
+  const toStop = train.schedule.find(s => s.station_code === currentToCode);
+  const distance = toStop.distance - fromStop.distance;
+  const fare = (distance * train.price_per_km).toFixed(2);
+
+  const params = new URLSearchParams({
+    trainName: train.train_name,
+    trainId: train.train_id,
+    from: fromInput,
+    to: toInput,
+    date: journeyDate,
+    departure: fromStop.time,
+    arrival: toStop.time,
+    fare: fare
+  });
+
+  window.location.href = `book-now.html?${params.toString()}`;
+}
+
 function displayTrains(trains) {
   // clear old cards but keep the heading
   const heading = document.getElementById('searching').innerText;
@@ -74,6 +97,9 @@ function displayTrains(trains) {
       <p>Runs on: ${train.runs_on.join(', ')}</p>
       <button class="book-btn">Book Ticket</button>
     `;
+    card.querySelector('.book-btn').addEventListener('click', function () {
+      openBookingPage(train);
+    });
     document.querySelector('.results').appendChild(card);
   });
 }
