@@ -1,0 +1,51 @@
+#searching{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.search-box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 4px solid black;
+
+}
+
+.navbar{
+  display: flex;
+  flex-direction: row;
+  font-size: 50px;
+  height:auto;
+}
+#from{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+#to{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+#data{
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+p{
+  font-size: 25px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;;
+}
+
+body{
+background-image: url('back2.jpg');
+}
+
+#sub{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-size: 20px;
+  border-radius: 1%;
+}
+
+#sub :hover{
+  font-size: 110%;
+}
