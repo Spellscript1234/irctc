@@ -1,1 +1,73 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Ticket - IRCTC</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <main class="booking-wrapper">
+    <section class="booking-card">
+      <h1>Book Your Ticket</h1>
+      <div id="bookingDetails" class="booking-details"></div>
+
+      <form id="bookingForm" class="booking-form">
+        <label for="passengerName">Passenger Name</label>
+        <input type="text" id="passengerName" placeholder="Enter passenger name" required>
+
+        <label for="passengerAge">Age</label>
+        <input type="number" id="passengerAge" min="1" max="120" placeholder="Enter age" required>
+
+        <label for="passengerGender">Gender</label>
+        <select id="passengerGender" required>
+          <option value="">Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+
+        <button type="submit" class="login-btn">Confirm Booking</button>
+        <p id="bookingMessage" class="login-message"></p>
+      </form>
+    </section>
+  </main>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const details = document.getElementById('bookingDetails');
+    const bookingForm = document.getElementById('bookingForm');
+    const bookingMessage = document.getElementById('bookingMessage');
+
+    const trainName = params.get('trainName') || 'N/A';
+    const trainId = params.get('trainId') || 'N/A';
+    const from = params.get('from') || 'N/A';
+    const to = params.get('to') || 'N/A';
+    const date = params.get('date') || 'N/A';
+    const departure = params.get('departure') || 'N/A';
+    const arrival = params.get('arrival') || 'N/A';
+    const fare = params.get('fare') || 'N/A';
+
+    details.innerHTML = `
+      <p><strong>Train:</strong> ${trainName} (${trainId})</p>
+      <p><strong>Route:</strong> ${from} to ${to}</p>
+      <p><strong>Date:</strong> ${date}</p>
+      <p><strong>Time:</strong> ${departure} to ${arrival}</p>
+      <p><strong>Fare:</strong> Rs. ${fare}</p>
+    `;
+
+    bookingForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+
+      bookingMessage.textContent = 'Booking confirmed successfully!';
+      bookingMessage.className = 'login-message success';
+    });
+  </script>
+</body>
+</html>
