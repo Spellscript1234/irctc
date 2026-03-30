@@ -1,1 +1,63 @@
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>IRCTC Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </div>
+
+  <main class="login-wrapper">
+    <form class="login-card" id="loginForm">
+      <h1>Login to IRCTC</h1>
+
+      <label for="email">Email</label>
+      <input type="email" id="email" placeholder="Enter your email" required>
+
+      <label for="password">Password</label>
+      <input type="password" id="password" placeholder="Enter your password" required>
+
+      <button type="submit" class="login-btn">Login</button>
+      <p id="loginMessage" class="login-message"></p>
+      <p class="auth-switch">
+        Don't have an account?
+        <a href="signup.html">Sign up</a>
+      </p>
+    </form>
+  </main>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const loginMessage = document.getElementById('loginMessage');
+
+    loginForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      const email = document.getElementById('email').value.trim().toLowerCase();
+      const password = document.getElementById('password').value;
+      const storedUser = JSON.parse(localStorage.getItem('irctcUser'));
+
+      if (!storedUser) {
+        loginMessage.textContent = 'No account found. Please sign up first.';
+        loginMessage.className = 'login-message error';
+        return;
+      }
+
+      if (storedUser.email === email && storedUser.password === password) {
+        loginMessage.textContent = 'Login successful. Redirecting...';
+        loginMessage.className = 'login-message success';
+        window.location.href = 'index.html';
+        return;
+      }
+
+      loginMessage.textContent = 'Invalid email or password.';
+      loginMessage.className = 'login-message error';
+    });
+  </script>
+</body>
+</html>
