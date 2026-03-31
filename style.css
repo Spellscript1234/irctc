@@ -1,4 +1,469 @@
 * {
+<<<<<<< HEAD
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  background-color: #f0f4f8;
+  color: #333;
+}
+
+/* navbar */
+.navbar {
+  background-color: #1a3c6e;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.navbar a:hover {
+  color: #f0c040;
+}
+
+/* search box */
+.search-box {
+  background-color: white;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  max-width: 600px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.search-box p {
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  color: #555;
+  font-weight: bold;
+}
+
+/* from and to inputs */
+#from, #to {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+#from:focus, #to:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+
+/* date input */
+#date {
+  padding: 10px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-family: inherit;
+}
+
+#date:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+
+/* submit button */
+#sub {
+  background-color: #1a3c6e;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+#sub:hover {
+  background-color: #f0c040;
+  color: #1a3c6e;
+}
+
+/* results section */
+.results {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+/* searching text */
+#searching {
+  font-size: 18px;
+  color: #1a3c6e;
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+/* train cards added by JS */
+.train-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border-left: 5px solid #1a3c6e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.train-card h3 {
+  color: #1a3c6e;
+  font-size: 18px;
+}
+
+.train-card p {
+  font-size: 15px;
+  color: #444;
+  font-weight: normal;
+}
+
+/* book button inside train card */
+.book-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+  width: fit-content;
+  margin-top: 5px;
+  transition: background-color 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #1b5e20;
+}
+
+/* responsive for small screens */
+@media (max-width: 600px) {
+  .search-box {
+    margin: 15px;
+    padding: 20px;
+  }
+
+  .navbar {
+    gap: 15px;
+    padding: 12px 20px;
+  }
+
+  .train-card {
+    padding: 15px;
+  }
+}
+.sort-bar {
+  max-width: 900px;
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0 15px;
+  flex-wrap: wrap;
+}
+
+.sort-bar span {
+  font-size: 15px;
+  font-weight: bold;
+  color: #1a3c6e;
+}
+
+.sort-bar button {
+  background-color: white;
+  border: 1.5px solid #1a3c6e;
+  color: #1a3c6e;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.sort-bar button:hover {
+  background-color: #1a3c6e;
+  color: white;
+}
+
+.sort-bar button.active {
+  background-color: #1a3c6e;
+  color: white;
+}
+body {
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  min-height: 100vh;
+  background-color: #1a3c6e;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(135deg, #1a3c6e 0%, #1565c0 50%, #1a237e 100%);
+  background-size: 40px 40px, 40px 40px, 100% 100%;
+  color: #333;
+}
+.search-box {
+  background-color: rgba(255, 255, 255, 0.97);
+  margin: 40px auto;
+  padding: 35px;
+  border-radius: 16px;
+  max-width: 600px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* add a title above search box */
+.search-box::before {
+  content: '🚂 Search Trains';
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a3c6e;
+  margin-bottom: 5px;
+}
+
+.results {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+#searching {
+  font-size: 18px;
+  color: white;        /* white text on dark background */
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+.train-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid #1a3c6e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.sort-bar span {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;        /* white text on dark background */
+}
+
+.sort-bar button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid white;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.sort-bar button:hover {
+  background-color: white;
+  color: #1a3c6e;
+}
+
+.sort-bar button.active {
+  background-color: #f0c040;
+  color: #1a3c6e;
+  border-color: #f0c040;
+}
+
+.login-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card h1 {
+  color: #1a3c6e;
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.login-card label {
+  color: #1a3c6e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.login-card input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.login-card input:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+
+.login-btn {
+  background-color: #1a3c6e;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #f0c040;
+  color: #1a3c6e;
+}
+
+.login-message {
+  min-height: 20px;
+  color: #1a3c6e;
+  font-weight: bold;
+}
+
+.login-message.success {
+  color: #1b5e20;
+}
+
+.login-message.error {
+  color: #b71c1c;
+}
+.auth-switch {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #1a3c6e;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: #1565c0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+.booking-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 560px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 28px;
+}
+
+.booking-card h1 {
+  color: #1a3c6e;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.booking-details {
+  background-color: #f2f6ff;
+  border: 1px solid #d6e3ff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.booking-details p {
+  margin-bottom: 8px;
+  color: #1a3c6e;
+}
+
+.booking-details p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-form label {
+  color: #1a3c6e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+=======
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -165,3 +630,4 @@ body {
     letter-spacing: 3px;
     font-weight: 500;
 }
+>>>>>>> da6a9db1e79bcf367b59e827d32d3a0d1fcb9a66

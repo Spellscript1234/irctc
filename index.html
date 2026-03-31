@@ -6,47 +6,31 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav class="navbar">
-        <div class="logo">TrainTicket™</div>
-        <ul class="nav-links">
-            <li><a href="#">Book Ticket</a></li>
-            <li><a href="#">Check Schedule</a></li>
-            <li><a href="#">Contact Us</a></li>
-            <li><a href="#">Login</a></li>
-            <li><a href="#">Register</a></li>
-        </ul>
-    </nav>
+  <div class="navbar">
+    <a href="index.html">Home</a>
+    <a href="login.html">Login</a>
+  </div>
+  <div class="search-box">
+    <p>From: <input type="text" placeholder="Enter from city name" id="from"></p>
+    <p>To: <input type="text" placeholder="Enter to city name" id="to"></p>
+    <p>Departure date: <input type="date" id="date"></p>
+    <p><button id="sub">SUBMIT -></button></p>
+  </div>
+  <div class="sort-bar">
+  <span>Sort by:</span>
+  <button onclick="sortBy('price', 'asc')">Price ↑</button>
+  <button onclick="sortBy('price', 'desc')">Price ↓</button>
+  <button onclick="sortBy('duration', 'asc')">Duration ↑</button>
+  <button onclick="sortBy('duration', 'desc')">Duration ↓</button>
+</div>
 
-    <main class="hero-section">
-        <div class="booking-container">
-            <div class="booking-header">
-                <h2>Book Ticket</h2>
-            </div>
-            
-            <form class="booking-form" id="searchForm">
-                <div class="form-group">
-                    <label for="fromStation">From</label>
-                    <input type="text" id="fromStation" placeholder="Enter From Station (e.g., HWH)" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="toStation">To</label>
-                    <input type="text" id="toStation" placeholder="Enter To Station" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="journeyDate">Date</label>
-                    <input type="date" id="journeyDate" required>
-                </div>
-                
-                <button type="submit" class="search-btn">Search Trains</button>
-            </form>
-        </div>
-
-        <div class="hero-text">
-            <h1>Indian Railways</h1>
-            <p>Safety | Security | Punctuality</p>
-        </div>
-    </main>
+<div class="results">
+  <h4 id="searching"></h4>
+</div>
+  <div class="results">
+    <h4 id="searching"></h4>
+    
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
