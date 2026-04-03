@@ -7,8 +7,11 @@
 
 body {
   font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  background-color: #f0f4f8;
-  color: #333;
+  background-image: url('https://thumbs.dreamstime.com/b/abandoned-railway-station-sunny-cold-day-dark-aesthetic-abandoned-railway-station-sunny-cold-day-241504327.jpg');
+  background-position: center center;
+  background-repeat: no repeat;
+  background-size:cover;
+  
 }
 
 /* navbar */
