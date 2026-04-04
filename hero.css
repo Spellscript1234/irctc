@@ -1,0 +1,370 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+}
+
+.navbar {
+  background-color: #1a3c6e;
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url('train.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -60px;
+  z-index: 1;
+}
+
+.content {
+  max-width: 900px;
+  padding: 1rem;
+  color: white;
+  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+.navbar a {
+  color: white;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.search-box {
+  z-index: 2;
+  margin: -60px auto 40px auto; /* Overlaps the hero section */
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  /* The Magic: Row alignment */
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-end; /* Aligns button with the baseline of inputs */
+  gap: 15px;
+  max-width: 950px;
+  width: 92%;
+}
+
+/* Container for each Label + Input pair */
+.input-group {
+  flex: 1; /* Makes "From", "To", and "Date" take equal width */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 14px;
+  font-weight: bold;
+  color: #1a3c6e;
+}
+
+/* Standardizing the input fields */
+#from, #to, #date {
+  width: 100%;
+  box-sizing: border-box; 
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 15px;
+}
+
+/* Adjusting the Search Button to match the row height */
+#sub {
+  height: 46px; /* Matches the vertical height of your inputs */
+  padding: 0 25px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  margin-bottom: 0;
+  background-color: #1a3c6e;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.2s ease;
+}
+
+#sub:hover {
+  background-color: #f0c040;
+  color: #1a3c6e;
+}
+
+
+.sort-bar {
+  max-width: 900px;
+  margin: 10px auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 0 15px;
+  flex-wrap: wrap;
+}
+
+.sort-bar span {
+  font-size: 15px;
+  font-weight: bold;
+  color: white;
+}
+
+.sort-bar button {
+  background-color: rgba(255, 255, 255, 0.15);
+  border: 1.5px solid black;
+  color: black;
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.2s;
+}
+
+.sort-bar button:hover {
+  background-color: white;
+  color: #1a3c6e;
+}
+
+.sort-bar button.active {
+  background-color: #f0c040;
+  color: #1a3c6e;
+  border-color: #f0c040;
+}
+
+
+.results {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 0 15px;
+}
+
+#searching {
+  font-size: 18px;
+  color: white; 
+  margin-bottom: 15px;
+  font-family: inherit;
+  font-weight: bold;
+}
+
+
+.train-card {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px 25px;
+  margin-bottom: 15px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  border-left: 5px solid #1a3c6e;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.train-card h3 {
+  color: #1a3c6e;
+  font-size: 18px;
+}
+
+.train-card p {
+  font-size: 15px;
+  color: #444;
+  font-weight: normal;
+}
+
+.book-btn {
+  background-color: #2e7d32;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 15px;
+  font-family: inherit;
+  width: fit-content;
+  margin-top: 5px;
+  transition: background-color 0.2s;
+}
+
+.book-btn:hover {
+  background-color: #1b5e20;
+}
+
+.login-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.login-card h1 {
+  color: #1a3c6e;
+  margin-bottom: 4px;
+  font-size: 28px;
+}
+
+.login-card label {
+  color: #1a3c6e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.login-card input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.login-card input:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+
+.login-btn {
+  background-color: #1a3c6e;
+  color: white;
+  border: none;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color 0.2s;
+}
+
+.login-btn:hover {
+  background-color: #f0c040;
+  color: #1a3c6e;
+}
+
+.login-message {
+  min-height: 20px;
+  color: #1a3c6e;
+  font-weight: bold;
+}
+
+.login-message.success {
+  color: #1b5e20;
+}
+
+.login-message.error {
+  color: #b71c1c;
+}
+
+.auth-switch {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #1a3c6e;
+  text-align: center;
+}
+
+.auth-switch a {
+  color: #1565c0;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+
+.booking-wrapper {
+  min-height: calc(100vh - 72px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.booking-card {
+  width: 100%;
+  max-width: 560px;
+  background-color: rgba(255, 255, 255, 0.97);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  padding: 28px;
+}
+
+.booking-card h1 {
+  color: #1a3c6e;
+  font-size: 28px;
+  margin-bottom: 14px;
+}
+
+.booking-details {
+  background-color: #f2f6ff;
+  border: 1px solid #d6e3ff;
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.booking-details p {
+  margin-bottom: 8px;
+  color: #1a3c6e;
+}
+
+.booking-details p:last-child {
+  margin-bottom: 0;
+}
+
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.booking-form label {
+  color: #1a3c6e;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.booking-form input,
+.booking-form select {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  font-family: inherit;
+  outline: none;
+  margin-bottom: 8px;
+}
+
+.booking-form input:focus,
+.booking-form select:focus {
+  border-color: #1a3c6e;
+  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+}
+
+
+  .train-card {
+    padding: 15px;
+  }
