@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="hero.css">
-  <title>Document</title>
+  <title>IRCTC</title>
 </head>
 <body>
   <div class="navbar">
@@ -19,11 +19,13 @@
     </div>
   </div>
   <div class="search-box">
-    <p>From: <input type="text" placeholder="Enter from city name" id="from"></p>
-    <p>To: <input type="text" placeholder="Enter to city name" id="to"></p>
+    <p>From: <input type="text" placeholder="Enter from city name" id="from" list="stations"></p>
+    <p>To: <input type="text" placeholder="Enter to city name" id="to" list="stations"></p>
     <p>Departure date: <input type="date" id="date"></p>
     <p><button id="sub">SUBMIT -></button></p>
   </div>
+  <datalist id="stations">
+  </datalist>
   <div class="sort-bar">
   <span>Sort by:</span>
   <button onclick="sortBy('price', 'asc')">Price ↑</button>
