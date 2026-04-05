@@ -30,8 +30,10 @@ body {
 .content {
   max-width: 900px;
   padding: 1rem;
-  color: white;
-  text-shadow: 0 0 10px rgba(0,0,0,0.8);
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  font-family: sans-serif;
+  
 }
 
 .navbar a {
@@ -43,24 +45,23 @@ body {
 
 .search-box {
   z-index: 2;
-  margin: -60px auto 40px auto; /* Overlaps the hero section */
+  margin: -60px auto 40px auto;
   padding: 25px;
   background: white;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   
-  /* The Magic: Row alignment */
   display: flex;
   flex-direction: row; 
-  align-items: flex-end; /* Aligns button with the baseline of inputs */
+  align-items: flex-end; 
   gap: 15px;
   max-width: 950px;
   width: 92%;
 }
 
-/* Container for each Label + Input pair */
+
 .input-group {
-  flex: 1; /* Makes "From", "To", and "Date" take equal width */
+  flex: 1; 
   display: flex;
   flex-direction: column;
   gap: 8px;
@@ -72,7 +73,7 @@ body {
   color: #1a3c6e;
 }
 
-/* Standardizing the input fields */
+
 #from, #to, #date {
   width: 100%;
   box-sizing: border-box; 
@@ -82,11 +83,11 @@ body {
   font-size: 15px;
 }
 
-/* Adjusting the Search Button to match the row height */
+
 #sub {
-  height: 46px; /* Matches the vertical height of your inputs */
+  height: 46px;
   padding: 0 25px;
-  white-space: nowrap; /* Prevents text from wrapping */
+  white-space: nowrap; 
   margin-bottom: 0;
   background-color: #1a3c6e;
   color: white;
@@ -132,14 +133,15 @@ body {
 }
 
 .sort-bar button:hover {
-  background-color: white;
-  color: #1a3c6e;
+  background-color:#1a3c6e;
+  color:white;
 }
 
 .sort-bar button.active {
   background-color: #f0c040;
   color: #1a3c6e;
   border-color: #f0c040;
+  transition: 80% width;
 }
 
 

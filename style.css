@@ -10,12 +10,12 @@ body {
   background-color: #1a3c6e;
   
 
-  background-image: url('https://arjasrikanth.in/wp-content/uploads/2024/12/vande-bharat-4-1.jpg?w=1024');
+  background-image: url('train.jpg');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  
+  background-blend-mode:lighten;
   color: #333;
 }
 
@@ -367,4 +367,4 @@ body {
   .train-card {
     padding: 15px;
   }
-}
+
