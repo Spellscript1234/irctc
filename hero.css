@@ -1,24 +1,7 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 0;
   min-height: 100vh;
-  background-color: #1a3c6e;
-  
-
-  background-image: url('train.jpg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  background-blend-mode:lighten;
-  color: #333;
 }
-
 
 .navbar {
   background-color: #1a3c6e;
@@ -29,6 +12,30 @@ body {
   gap: 30px;
 }
 
+.hero {
+  width: 100vw;
+  height: 60vh;
+  background-image: url('train.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: -60px;
+  z-index: 1;
+}
+
+.content {
+  max-width: 900px;
+  padding: 1rem;
+  color: #FFFFFF;
+  text-shadow: 0 0 10px rgba(0,0,0,0.6);
+  font-family: sans-serif;
+  
+}
+
 .navbar a {
   color: white;
   text-decoration: none;
@@ -36,64 +43,59 @@ body {
   font-weight: bold;
 }
 
-.navbar a:hover {
-  color: #f0c040;
+.search-box {
+  z-index: 2;
+  margin: -60px auto 40px auto;
+  padding: 25px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  
+  display: flex;
+  flex-direction: row; 
+  align-items: flex-end; 
+  gap: 15px;
+  max-width: 950px;
+  width: 92%;
 }
 
-.search-box {
-  backdrop-filter: blur(9px);
-  margin: 40px auto;
-  padding: 35px;
-  border-radius: 16px;
-  max-width: 600px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+
+.input-group {
+  flex: 1; 
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 8px;
 }
 
-.search-box::before {
-  content: '🚂 Search Trains';
-  font-size: 22px;
+.input-group label {
+  font-size: 14px;
   font-weight: bold;
   color: #1a3c6e;
-  margin-bottom: 5px;
 }
 
-.search-box p {
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  color: #555;
-  font-weight: bold;
-}
 
 #from, #to, #date {
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid #ccc;
+  width: 100%;
+  box-sizing: border-box; 
+  padding: 12px;
+  border: 1px solid #ddd;
   border-radius: 8px;
-  outline: none;
-  font-family: inherit;
-}
-
-#from:focus, #to:focus, #date:focus {
-  border-color: #1a3c6e;
-  box-shadow: 0 0 0 2px rgba(26, 60, 110, 0.2);
+  font-size: 15px;
 }
 
 
 #sub {
+  height: 46px;
+  padding: 0 25px;
+  white-space: nowrap; 
+  margin-bottom: 0;
   background-color: #1a3c6e;
   color: white;
   border: none;
-  padding: 12px 25px;
-  font-size: 16px;
   border-radius: 8px;
   cursor: pointer;
-  font-family: inherit;
-  transition: background-color 0.2s;
+  font-weight: bold;
+  transition: all 0.2s ease;
 }
 
 #sub:hover {
@@ -120,8 +122,8 @@ body {
 
 .sort-bar button {
   background-color: rgba(255, 255, 255, 0.15);
-  border: 1.5px solid white;
-  color: white;
+  border: 1.5px solid black;
+  color: black;
   padding: 8px 16px;
   border-radius: 20px;
   cursor: pointer;
@@ -131,14 +133,15 @@ body {
 }
 
 .sort-bar button:hover {
-  background-color: white;
-  color: #1a3c6e;
+  background-color:#1a3c6e;
+  color:white;
 }
 
 .sort-bar button.active {
   background-color: #f0c040;
   color: #1a3c6e;
   border-color: #f0c040;
+  transition: 80% width;
 }
 
 
@@ -367,4 +370,3 @@ body {
   .train-card {
     padding: 15px;
   }
-
