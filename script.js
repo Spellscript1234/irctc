@@ -122,6 +122,17 @@ async function getstations() {
   }
 }
 
+async function populateStations() {
+  const stationsData = await getstations();
+  if (!stationsData) return;
+  const datalist = document.getElementById('stations');
+  stationsData.stations.forEach(station => {
+    const option = document.createElement('option');
+    option.value = station.name;
+    datalist.appendChild(option);
+  });
+}
+
 async function gettrains() {
   if (trainsDataCache) return trainsDataCache;
   try {
@@ -208,4 +219,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
   getstations();
   gettrains();
+  populateStations();
 });
